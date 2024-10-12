@@ -1,0 +1,384 @@
+<html><head><base href="index.html?section=Proyectos">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hymex Studio - Proyectos</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Thambi 2', cursive;
+    height: 100%;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar.shrink {
+    padding: 5px 20px;
+}
+
+.navbar h2 {
+    margin: 0;
+    transition: font-size 0.3s ease;
+}
+
+.navbar.shrink h2 {
+    font-size: 1.2em;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #333;
+    color: #ffdf00;
+}
+
+.navbar.shrink .menu-item {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.menu-item.sign-up {
+    background-color: #ffdf00;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-item.sign-up:hover {
+    background-color: #ffdf00;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 100px 20px 20px;
+    background-color: white;
+    transition: padding-top 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content.expanded {
+    padding-top: 70px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ffdf00;
+}
+
+.project-description {
+    font-size: 0.9em;
+    color: #fff;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navbar.shrink {
+        padding: 5px 20px;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .navbar.shrink .menu-item {
+        padding: 3px 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .footer-text {
+        margin-bottom: 10px;
+    }
+
+    .footer-icons {
+        justify-content: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar" id="navbar">
+        <h2>Hymex STUDIO</h2>
+        <div class="menu-items">
+            <div class="menu-item" id="inicio">Inicio</div>
+            <div class="menu-item" id="tienda">Tienda</div>
+            <div class="menu-item active" id="proyectos">Proyectos</div>
+            <a href="login-register.html" class="menu-item sign-up">Sign Up</a>
+        </div>
+    </nav>
+    <div class="content" id="content">
+        <h1>Nuestros Proyectos</h1>
+        <p>Explora algunos de nuestros proyectos más recientes:</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200?text=Proyecto+1" alt="Imagen del Proyecto 1" class="project-image" width="300" height="200">
+                <div class="project-info">
+                    <h3 class="project-title">Proyecto 1</h3>
+                    <p class="project-description">No Hay Nada de Momento</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200?text=Proyecto+2" alt="Imagen del Proyecto 2" class="project-image" width="300" height="200">
+                <div class="project-info">
+                    <h3 class="project-title">Proyecto 2</h3>
+                    <p class="project-description">No Hay Nada de Momento</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200?text=Proyecto+3" alt="Imagen del Proyecto 3" class="project-image" width="300" height="200">
+                <div class="project-info">
+                    <h3 class="project-title">Proyecto 3</h3>
+                    <p class="project-description">No Hay Nada de Momento</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200?text=Proyecto+4" alt="Imagen del Proyecto 4" class="project-image" width="300" height="200">
+                <div class="project-info">
+                    <h3 class="project-title">Proyecto 4</h3>
+                    <p class="project-description">No Hay Nada de Momento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-text">
+        &copy; 2024 Hymex STUDIO. Todos los derechos reservados.
+    </div>
+    <div class="footer-icons">
+        
+    </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+const content = document.getElementById('content');
+const menuItems = document.querySelectorAll('.menu-item:not(.sign-up)');
+let timeoutId;
+
+function expandMenu() {
+    clearTimeout(timeoutId);
+    navbar.classList.remove('shrink');
+    content.classList.remove('expanded');
+}
+
+function shrinkMenu() {
+    timeoutId = setTimeout(() => {
+        navbar.classList.add('shrink');
+        content.classList.add('expanded');
+    }, 300);
+}
+
+navbar.addEventListener('mouseenter', expandMenu);
+navbar.addEventListener('mouseleave', shrinkMenu);
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        menuItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        
+        if (this.id === 'tienda') {
+            window.location.href = 'tiendav2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+        if (this.id === 'proyectos') {
+            window.location.href = 'proyectosv2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+        if (this.id === 'inicio') {
+            window.location.href = 'iniciov2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+    });
+});
+
+function loadContent(sectionId) {
+    console.log(`Cargando contenido para la sección: ${sectionId}`);
+}
+
+if ('ontouchstart' in window) {
+    navbar.removeEventListener('mouseenter', expandMenu);
+    navbar.removeEventListener('mouseleave', shrinkMenu);
+    
+    navbar.classList.remove('shrink');
+    content.classList.remove('expanded');
+}
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = '#333';
+    } else {
+        navbar.style.backgroundColor = '#333';
+    }
+});
+
+// Animación de entrada para las tarjetas de proyectos
+const projectCards = document.querySelectorAll('.project-card');
+
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function handleScrollAnimation() {
+    projectCards.forEach(card => {
+        if (isElementInViewport(card)) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('load', handleScrollAnimation);
+
+// Inicializar las tarjetas de proyectos con opacidad 0 y transformación
+projectCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+});
+</script>
+</body></html>

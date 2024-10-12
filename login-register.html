@@ -1,0 +1,434 @@
+<!doctype html>
+<html> 
+ <head> 
+  <title>Hymex Studio - Sing Up</title>
+  <meta charset="UTF-8"> 
+ <style type="text/css" id="dcoder_stylesheet">@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap');
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body {
+  font-family: 'Baloo Thambi 2', cursive;
+  background: #000000;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    height: 430px;
+}
+
+#container .inputBox {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#container .inputBox i {
+    color: #ffdf00;
+    position: absolute;
+    top: 13.5px;
+    left: 6.5px;
+    transition: .5s;
+}
+
+#container .inputBox input:focus ~ i {
+  color: #838383;
+  transform: scale(1);
+}
+
+#container .inputBox input {
+    width: 400px;
+    padding: 10px 5px 10px 30px;
+    border: none;
+    border-bottom: 2px solid #ffdf00;
+    //border-radius: 4px 6px;
+    color: #ffdf00;
+    outline: none;
+    font-family: 'Baloo Thambi 2', cursive;
+  font-size: 10.5pt;
+  background: none;
+  text-transform: lowercase;
+}
+
+#container .inputBox label {
+    font-size: 11pt;
+    position: absolute;
+    top: -9px;
+    left: 0;
+    padding: 0 4px;
+    font-weight: bold;
+    color: white;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+#container #form1 {
+    transform: translateX(-500px);
+    transition: linear .5s;
+    //backface-visibility: hidden;
+}
+
+#container #form2 {
+    transform: translateX(500px);
+    transition: linear .5s;
+    //backface-visibility: hidden;
+    position: absolute;
+    top: 67px;
+}  
+
+#container #login:checked ~ #form1 {
+    transform: translateX(0);
+}
+
+#container #regis:checked ~ #form2 {
+    transform: translateX(0);
+}
+
+#container #btns {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#container #btns label {
+    font-size: 18pt;
+    margin: 0 13px;
+    transition: ease 1.3s;
+    cursor: pointer;
+    color: #ffdf00;
+    //position: relative;
+    opacity: 0.6;
+}
+
+#container input[type=radio] {
+    display: none;
+}
+
+#container p {
+  font-size: 10.5pt;
+  margin-top: -15px;
+  float: right;
+  color: white;
+  cursor: pointer;
+}
+
+#container #login:checked ~ #btns label[for="login"],
+#container #regis:checked ~ #btns label[for="regis"] {
+    font-weight: bold;
+    //border-bottom: 3px solid #EDDEA4;
+    //border-radius: 4px;
+    color: #ffdf00;
+    opacity: 1;
+}
+
+
+#container #btns label::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height:3px;
+  top: 100%;
+  left: 0;
+  transition: all 0.3s linear;
+  border-radius: 100px 0;
+  transform: scaleX(0);
+  background: rgba(255,255,255,0.233);
+}
+
+#container #btns label:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+#container .confirm {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  background: rgba(255,255,255,0.233);,
+  outline: none;
+  cursor: pointer;
+    border: .2px solid #424242;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: white;
+}
+
+#container center {
+  margin-top: 10px;
+  float: left;
+}
+
+#container center label {
+  color: #ffdf00;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#container center span {
+  cursor: pointer;
+  color: white;
+}
+
+#container #btns #borda {
+  content: '';
+  height: 5px;
+  //width: 57px;
+  //background: #EDDEA4;
+  position: absolute;
+  border-radius: 0 0 50px 50px;
+  top: 27px;
+  //left: 128px;
+  transition: .7s;
+  border-bottom: 3px solid #ffdf00;
+  border-radius: -1px;
+}
+
+#container #login:checked ~ #btns #borda {
+  width: 57px;
+  left: 132px;
+}
+
+#container #regis:checked ~ #btns #borda {
+  width: 85px;
+  left: 218px;
+}
+
+#container .inputBox .mostrar i {
+  left: 94.5%;
+  top: 17.5px;
+  cursor: pointer;
+  font-size: 10pt;
+  padding: 5px;
+}
+
+#container .inputBox i::after {
+  content: '';
+  width: 0px;
+  height: 14.6px;
+  //background: white;
+  position: absolute;
+  border-bottom: 2px solid rgba(255,255,255,.5);
+  bottom: -14px;
+  left: -24.5px;
+  transition: .5s;
+}
+
+#container .inputBox input:focus ~ i::after {
+  width: 455px;
+}
+
+#container .inputBox .visor {
+  color: red;
+  opacity: 0.7;
+  position: absolute;
+  left: 20px;
+  bottom: -18px;
+  font-size: 14.5px;
+  top: 42px;
+}
+
+#container .inputBox .visor i {
+  color: red;
+  position: absolute;
+  top: 5px;
+  left: -15px;
+  font-size: 11px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  text-align: center;
+  background-color: #000000;
+  padding: 10px; 
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+
+.button-group {
+  display: inline-block;
+  margin: 10px; 
+}
+
+.button-group img {
+  margin: 20px;
+  width: 60px; 
+  height: 60px; 
+  margin: 0 auto; 
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+img {
+  transition: transform 0.5s;
+}
+img:hover {
+  transform: scale(1.2);
+}
+.text1 {
+  font-size: 15px;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.title1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+.button-back {
+  position: absolute;
+  top: 50px;
+  left: 1200px;
+  color: black;
+  border: solid: white;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+.button-back:hover {
+  transition: 0.5s;
+  background-color: #ffdf00;
+  color: black;
+  cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+
+</style></head>
+ <body>
+  <h1 class="title1">Hymex Studio</h1>
+  <div class="boton-back">
+    <a class="button-back" href="iniciov2.html">Volver
+      <i class="fab fa-house"></i>
+    </a>
+  </div>
+  <div id="container"> 
+   <input type="radio" id="login" name="btn" checked> 
+   <input type="radio" id="regis" name="btn"> 
+   <div id="btns"> <label for="login">Login</label> <label for="regis">Register</label> <span id="borda"></span> 
+   </div> 
+   <form id="form1" onsubmit="return validar()"> 
+    <div class="inputBox"> 
+     <input class="email" type="text"> <i class="fas fa-at"></i> <label>Email:</label> <span class="visor"></span> 
+    </div> 
+    <div class="inputBox"> 
+     <input class="senha" type="password"> <i class="fas fa-lock"></i> <label>Password:</label> <span class="mostrar"><i onclick="olhar(0)" class="fas fa-eye"></i></span> <span class="visor"></span> 
+    </div> 
+    <p>&nbsp; Forgot your password?</p> 
+    <input class="confirm" type="submit" value="LOG IN"> 
+    <center> <span>Don't have an account?</span> <label for="regis"> Register</label> 
+    </center> 
+   </form> 
+   <form onsubmit="return validar1()" id="form2"> 
+    <div class="inputBox"> 
+     <input id="nome" type="text" style="text-transform: capitalize"> <i class="fas fa-user"></i> <label>Name:</label> <span class="visor"></span> 
+    </div> 
+    <div class="inputBox"> 
+     <input class="email" type="text"> <i class="fas fa-at"></i> <label>Email:</label> <span class="visor"></span> 
+    </div> 
+    <div class="inputBox"> 
+     <input class="senha" type="password"> <i class="fas fa-lock"></i> <label>Password:</label> <span class="mostrar"><i onclick="olhar(1)" class="fas fa-eye"></i></span> <span class="visor"></span> 
+    </div> 
+    <div class="inputBox"> 
+     <input class="senha" type="password"> <i class="fas fa-lock"></i> <label>Confirm password:</label> <span class="mostrar"><i onclick="olhar(2)" class="fas fa-eye"></i></span> <span class="visor"></span> 
+    </div> 
+    <input class="confirm" type="submit" value="REGISTER"> 
+    <center> <span>Already have an account?</span> <label for="login"> Login</label> 
+    </center> 
+   </form> 
+  </div>
+  <script src="login.js"></script>
+</body>
+<footer>
+  <div>
+    <p class="text1">You can also register with:</p>
+  </div>
+  <div class="button-group">
+    <img src="google.png">
+  </div>
+  <div class="button-group">
+    <img src="github.png">
+  </div>
+  <div class="button-group">
+    <img src="discord1.png">
+  </div>
+ 
+</footer>
+ 
+<script type="text/javascript" id="dcoder_script">
+
+function olhar(v) {
+  var x = document.getElementsByClassName('senha')
+  if (x[v].type == 'password') {
+    x[v].type = 'text'
+  }
+  else {
+    x[v].type = 'password'
+  }
+}
+
+
+var visor = document.getElementsByClassName('visor')
+var senha = document.getElementsByClassName('senha')
+var pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+function validar(){
+  if(!pattern.test(document.getElementsByClassName("email")[0].value)){
+    visor[0].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Enter email correctly'
+    return false
+  }
+  else {
+    visor[0].innerHTML = ''
+  }
+  
+  if (senha[0].value.length < 8 | senha[0].value.length > 20) {
+    visor[1].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Enter the password between 8-20 characters'
+    return false
+  }
+}
+
+
+function validar1(){
+
+  var nome = document.getElementById('nome')
+  if (nome.value == '') {
+    visor[2].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Dont leave this field empty'
+    return false
+  }
+  else {
+    visor[2].innerHTML = ''
+  }
+
+  
+  if(!pattern.test(document.getElementsByClassName("email")[1].value)){
+    visor[3].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Enter email correctly'
+    return false
+  }
+  else {
+    visor[3].innerHTML = ''
+  }
+  
+
+  if (senha[1].value.length < 8 | senha[1].value.length > 20) {
+    visor[4].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Enter the password between 8-20 characters'
+    return false
+  }
+  else {
+    visor[4].innerHTML = ''
+  }
+  
+ 
+  if (senha[1].value != senha[2].value) {
+    visor[5].innerHTML = '<i class="fas fa-exclamation-triangle"></i> Passwords are not the same'
+    return false
+  }
+}</script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<html><head><base href="index.html?section=Inicio">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hymex Studio - Inicio</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Thambi 2', cursive;
+    height: 100%;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar.shrink {
+    padding: 5px 20px;
+}
+
+.navbar h2 {
+    margin: 0;
+    transition: font-size 0.3s ease;
+}
+
+.navbar.shrink h2 {
+    font-size: 1.2em;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.menu-item:hover, .menu-item.active {
+    color: #ffdf00;
+}
+
+.navbar.shrink .menu-item {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.menu-item.sign-up {
+    background-color: #ffdf00;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-item.sign-up:hover {
+    background-color: #f0f4f8;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 100px 20px 20px;
+    background-color: white;
+    transition: padding-top 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content.expanded {
+    padding-top: 70px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+.hero {
+    background-image: url('hymexbanner2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.hero-content {
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    transform: translateX(250px);
+}
+
+.cta-button:hover {
+    background-color: #ffdf00;
+    color:#333;
+}
+#cta-button2 {
+    background-color: #2f00ff;
+    color: #fff;
+    transform: translateX(490px) translateY(80px);
+}
+#cta-button2:hover {
+    transition: 0.4s;
+    background-color: #ffdf00;
+    color: #333;
+}
+#cta-button3 {
+    background-color: #ff0062;
+    color: #fff;
+    transform: translateX(480px) translateY(80px);
+}
+#cta-button3:hover {
+    transition: 0.4s;
+    background-color: #ffdf00;
+    color: #333;
+}
+#cta-button4 {
+    background-color: #ff0000f5;
+    color: #fff;
+    transform: translateX(-680px) translateY(80px);
+}
+#cta-button4:hover {
+    transition: 0.4s;
+    background-color: #ffdf00;
+    color: #333;
+}
+#cta-button5 {
+    background-color: #00d9fff5;
+    color: #fff;
+    transform: translateX(-670px) translateY(80px);
+}
+#cta-button5:hover {
+    transition: 0.4s;
+    background-color: #ffdf00;
+    color: #333;
+}
+
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.features:hover {
+    transition: 0.4s;
+    cursor: pointer;
+    transform: scale(1.3px);
+}
+
+.feature {
+    flex-basis: calc(33.333% - 20px);
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature i {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navbar.shrink {
+        padding: 5px 20px;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .navbar.shrink .menu-item {
+        padding: 3px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .feature {
+        flex-basis: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .footer-text {
+        margin-bottom: 10px;
+    }
+
+    .footer-icons {
+        justify-content: center;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar" id="navbar">
+        <h2>Hymex STUDIO</h2>
+        <div class="menu-items">
+            <div class="menu-item active" id="inicio">Inicio</div>
+            <div class="menu-item" id="tienda">Tienda</div>
+            <div class="menu-item" id="proyectos">Proyectos</div>
+            <a href="mcplugins.html" class="menu-item sign-up">Sign Up</a>
+        </div>
+    </nav>
+    <div class="content" id="content">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a Hymex Studio</h1>
+                <p>Descubre el poder de la creatividad digital con nuestras herramientas y servicios</p>
+                <a href="tiendav2.html" class="cta-button">Comenzar Ahora
+                    <i class="fas fa-bolt"></i>
+                </a>
+                <a href="https://ko-fi.com/hymexstudio" class="cta-button" id="cta-button3">Ko-Fi
+                    <i class="fas fa-mug-saucer"></i>
+                </a>
+            </a>
+            <a href="https://discord.gg/R2egXVrFWa" class="cta-button" id="cta-button2">Discord
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://www.youtube.com/@hymexoficial" class="cta-button" id="cta-button4">YouTube
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://paypal.me/soybilalo?country.x=ES&locale.x=es_ES" class="cta-button" id="cta-button5">PayPal
+                <i class="fa-brands fa-paypal"></i>
+            </a>
+            </div>
+        </div>
+        <div class="features" id="features">
+            <div class="feature">
+                <i class="fas fa-gear"></i>
+                <h3>Version WEB: Beta</h3>
+                <p>Nuestra página web oficial se encuentra en fase BETA, eso quiere decir que no esta en su fase final por lo tanto no esta acabado algunas cosas, si ves algún error puedes reportarlo en el Discord, y si tienes una sugerencia para la Web tambien puedes comentarlo por el Discord</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-gears"></i>
+                <h3>Colabora!</h3>
+                <p>Como ves nuestra página WEB no está acabada, pero si tienes o consideras que tienes habilidades para aportar en la WEB solo tienes que unirte al Discord y luego postularte, cualquier colaboración es excelente y aceptable.</p>
+            </div>
+            <div class="feature">
+                <i class="fab fa-discord"></i>
+                <h3>Nuestro Discord!</h3>
+                <p>Unete a nuestro Servidor de Discord para estar atento a todas las novedades</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Eficencia</h3>
+                <p>Nos gusta brindar el mejor servico/calidad posible al cliente con los precios mas baratos y ajustados si es posible.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-code"></i>
+                <h3>Herramienta</h3>
+                <p>Utilizamos las ultimas tecnologías y las mas aptas para tu gusto para poder así sastifacer a nuestros clientes.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users"></i>
+                <h3>Comunidad</h3>
+                <p>Intentamos formar la mejor comunidad para cualquier persona por eso nos adaptamos a dos lenguajes el Ingles y el Español.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-text">
+        &copy; 2024 Hymex STUDIOS. Todos los derechos reservados.
+    </div>
+    <div class="footer-icons">
+
+    </div> 
+    </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+const content = document.getElementById('content');
+const menuItems = document.querySelectorAll('.menu-item:not(.sign-up)');
+let timeoutId;
+
+function expandMenu() {
+    clearTimeout(timeoutId);
+    navbar.classList.remove('shrink');
+    content.classList.remove('expanded');
+}
+
+function shrinkMenu() {
+    timeoutId = setTimeout(() => {
+        navbar.classList.add('shrink');
+        content.classList.add('expanded');
+    }, 300);
+}
+
+navbar.addEventListener('mouseenter', expandMenu);
+navbar.addEventListener('mouseleave', shrinkMenu);
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        menuItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        
+        if (this.id === 'tienda') {
+            window.location.href = 'tiendav2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+        if (this.id === 'proyectos') {
+            window.location.href = 'proyectosv2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+        if (this.id === 'inicio') {
+            window.location.href = 'iniciov2.html';
+        } else if (this.id === 'inicio') {
+            window.location.href = 'index.html?section=Inicio';
+        } else {
+            loadContent(this.id);
+        }
+    });
+});
+
+function loadContent(sectionId) {
+    console.log(`Cargando contenido para la sección: ${sectionId}`);
+}
+
+if ('ontouchstart' in window) {
+    navbar.removeEventListener('mouseenter', expandMenu);
+    navbar.removeEventListener('mouseleave', shrinkMenu);
+    
+    navbar.classList.remove('shrink');
+    content.classList.remove('expanded');
+}
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = '#333';
+    } else {
+        navbar.style.backgroundColor = '#333';
+    }
+});
+
+// Animación suave para el scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Efecto hover para las características
+const features = document.querySelectorAll('.feature');
+features.forEach(feature => {
+    feature.addEventListener('mouseover', () => {
+        feature.style.backgroundColor = '#f8f9fa';
+    });
+    feature.addEventListener('mouseout', () => {
+        feature.style.backgroundColor = '#f8f9fa';
+    });
+});
+
+// Animación de entrada para las características
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function handleScrollAnimation() {
+    features.forEach(feature => {
+        if (isElementInViewport(feature)) {
+            feature.style.opacity = '1';
+            feature.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('load', handleScrollAnimation);
+
+// Inicializar las características con opacidad 0 y transformación
+features.forEach(feature => {
+    feature.style.opacity = '0';
+    feature.style.transform = 'translateY(20px)';
+    feature.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+});
+</script>
+</body></html>
